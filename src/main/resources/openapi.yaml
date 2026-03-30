@@ -19,12 +19,12 @@ paths:
           required: false
           schema:
             $ref: '#/components/schemas/OrderStatus'
-        - name: userSearchRequest[name]
+        - name: userSearchRequest.name
           in: query
           required: false
           schema:
             type: string
-        - name: userSearchRequest[userStatus]
+        - name: userSearchRequest.userStatus
           in: query
           required: false
           schema:
