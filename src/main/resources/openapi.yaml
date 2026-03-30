@@ -19,6 +19,13 @@ paths:
           required: false
           schema:
             $ref: '#/components/schemas/OrderStatus'
+        - name: userSearchRequest
+          in: query
+          required: false
+          style: deepObject
+          explode: true
+          schema:
+            $ref: '#/components/schemas/UserSearchRequest'
       responses:
         '200':
           description: 주문 목록
@@ -36,6 +43,20 @@ components:
       enum:
         - PENDING
         - CANCELED
+
+    UserStatus:
+      type: string
+      enum:
+        - ACTIVE
+        - INACTIVE
+
+    UserSearchRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        userStatus:
+          $ref: '#/components/schemas/UserStatus'
 
     OrderResponse:
       type: object
