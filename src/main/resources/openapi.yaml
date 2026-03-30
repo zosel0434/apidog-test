@@ -39,16 +39,18 @@ paths:
 components:
   schemas:
     OrderStatus:
-      type: string
-      enum:
-        - PENDING
-        - CANCELED
+      oneOf:
+        - const: PENDING
+          description: 대기
+        - const: CANCELED
+          description: 취소
 
     UserStatus:
-      type: string
-      enum:
-        - ACTIVE
-        - INACTIVE
+      oneOf:
+        - const: ACTIVE
+          description: 활성화
+        - const: INACTIVE
+          description: 비활성화
 
     UserSearchRequest:
       type: object
